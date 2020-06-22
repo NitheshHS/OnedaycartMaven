@@ -15,20 +15,27 @@ import com.oneDayCart.GenericLib.Base;
 import com.oneDayCart.GenericLib.Utility;
 
 public class Grocery {
-	@FindBys({
-		@FindBy(xpath="//span[.='Add to Cart']")
-	})
-	private List<WebElement> addcartButtons;
-	@FindBy(id="select_6995")
+
+	@FindBy(xpath="//span[.='Add to Cart']")
+	private WebElement addcartButtons;
+	
+	@FindBy(xpath="//select[@class='pdt-select']")
 	private WebElement selectQTYdrop;
+	
 	@FindBy(name="qty")
 	private WebElement qtyTF;
+	
 	@FindBy(xpath="//span[.='Add to Cart']")
 	private WebElement addtocartButton;
+	
 	@FindBy(xpath="RICE & RICE PRODUCTS")
 	private WebElement riceproductInfo;
+	
 	@FindBy(xpath="//img[@alt='tick']")
 	private WebElement checkmarkMSG;
+	
+	@FindBy(xpath="//a[contains(@href,'price=600')]")
+	private WebElement price600;
 	
 	public WebElement getSelectQTYdrop() {
 		return selectQTYdrop;
@@ -46,26 +53,23 @@ public class Grocery {
 	public WebElement getCheckmarkMSG() {
 		return checkmarkMSG;
 	}
-	
-	public List<WebElement> getAddcartButtons() {
+
+	public WebElement getAddcartButtons() {
 		return addcartButtons;
 	}
 	public void addGrocery(WebDriver driver,String search, String kGgrams) {
 		HomePage home = PageFactory.initElements(driver, HomePage.class);
 		home.search(search);
+		Reporter.log("search product", true);
 		Utility.selectByVisibletext(selectQTYdrop, kGgrams);
 		addtocartButton.click();
-		Assert.assertTrue(checkmarkMSG.isDisplayed());
+		Reporter.log("click on add to cart button", true);
 
 	}
 	public void addAllprodToCart() {
-		for(int i=0;i<addcartButtons.size();i++)
-		{
-			Reporter.log("click on add to cart",true);
-			addcartButtons.get(i).click();
-			int y = addcartButtons.get(i).getLocation().getY();
-			JavascriptExecutor js=(JavascriptExecutor)Base.staticDriver;
-			js.executeScript("window.scrollBy(0,"+y+")");
-		}
+		addcartButtons.click();
+		Reporter.log("click on add cart button", true);
 	}
+	
+	
 }

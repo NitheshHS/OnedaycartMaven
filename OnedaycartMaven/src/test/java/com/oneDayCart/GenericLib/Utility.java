@@ -26,10 +26,10 @@ public class Utility {
 	 * @param driver
 	 * @param element
 	 */
-	public static void moveToElement(WebDriver driver, WebElement element) 
+	public static void moveToElement(WebElement element) 
 	{
-		ac=new Actions(driver);
-		ac.moveToElement(element).perform();
+		ac=new Actions(Base.staticDriver);
+		ac.moveToElement(element).build().perform();
 	}
 	/**
 	 * This method used handle dropdown in webpage

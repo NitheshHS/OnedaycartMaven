@@ -14,6 +14,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.Reporter;
+import org.testng.asserts.SoftAssert;
 
 import com.oneDayCart.GenericLib.Base;
 import com.oneDayCart.GenericLib.Utility;
@@ -154,6 +155,19 @@ public class HomePage
 	@FindBy(xpath="//button[.='×']")
 	private WebElement closePushNotificationBT;
 	
+	@FindBy(xpath="//a[.='View cart']")
+	private WebElement shoppingcart;
+	
+	@FindBy(xpath="//a[@title='Shopping cart']")
+	private WebElement shoppingcartInfo;
+	
+	public WebElement getShoppingcart() {
+		return shoppingcart;
+	}
+	
+	public WebElement getShoppingcartInfo() {
+		return shoppingcartInfo;
+	}
 	public WebElement getClosePushNotificationBT() {
 		return closePushNotificationBT;
 	}
@@ -350,65 +364,65 @@ public class HomePage
 	public void clickOnSearchBar(String searchprod) {
 		searchBar.sendKeys(searchprod,Keys.ENTER);
 	}
-	public void grocesoryRiceProd(WebDriver driver) {
-		Utility.moveToElement(driver, grocerylink);
-		riceproductLink.click();	
+	public void grocesoryRiceProd() {
+		Actions act=new Actions(Base.staticDriver);
+		act.moveToElement(grocerylink).moveToElement(riceproductLink).click().build().perform();
 	}
-	public void grocesoryFlourAtta(WebDriver driver) {
-		Utility.moveToElement(driver, grocerylink);
+	public void grocesoryFlourAtta() {
+		Utility.moveToElement(grocerylink);
 		floursattaLink.click();
 	}
-	public void grocesoryDallPulses(WebDriver driver) {
-		Utility.moveToElement(driver, grocerylink);
+	public void grocesoryDallPulses() {
+		Utility.moveToElement(grocerylink);
 		dalspulsesLink.click();
 	}
-	public void grocesorySpiceMasala(WebDriver driver) {
-		Utility.moveToElement(driver, grocerylink);
+	public void grocesorySpiceMasala() {
+		Utility.moveToElement(grocerylink);
 		spicesmasalaLink.click();
 	}
-	public void grocesorySaltSuger(WebDriver driver) {
-		Utility.moveToElement(driver, grocerylink);
+	public void grocesorySaltSuger() {
+		Utility.moveToElement(grocerylink);
 		saltsugarLink.click();
 	}
-	public void grocesoryEdibleOil(WebDriver driver) {
-		Utility.moveToElement(driver, grocerylink);
+	public void grocesoryEdibleOil() {
+		Utility.moveToElement(grocerylink);
 		edibleoilLink.click();
 	}
-	public void fruitVegetable(WebDriver driver) {
-		Utility.moveToElement(driver, fruitLink);
+	public void fruitVegetable() {
+		Utility.moveToElement(fruitLink);
 		vegetableLink.click();
 	}
-	public void fruits(WebDriver driver) {
-		Utility.moveToElement(driver, fruitLink);
+	public void fruits() {
+		Utility.moveToElement(fruitLink);
 		fruitLink.click();
 	}
-	public void fishmeat(WebDriver driver) {
-		Utility.moveToElement(driver, fishmeatLink);
+	public void fishmeat() {
+		Utility.moveToElement(fishmeatLink);
 		frozenmeatLink.click();
 	}	
-	public void foodDairyProduct(WebDriver driver) {
-		Utility.moveToElement(driver, foodLink);
-		Utility.moveToElement(driver, readytocookLink);
+	public void foodDairyProduct() {
+		Utility.moveToElement(foodLink);
+		Utility.moveToElement(readytocookLink);
 		dairyproductLink.click();
 	}
-	public void foodReadyMade(WebDriver driver) {
-		Utility.moveToElement(driver, foodLink);
-		Utility.moveToElement(driver, readytocookLink);
+	public void foodReadyMade() {
+		Utility.moveToElement(foodLink);
+		Utility.moveToElement(readytocookLink);
 		readymadeLink.click();
 	}
-	public void foodSnacks(WebDriver driver) {
-		Utility.moveToElement(driver, foodLink);
-		Utility.moveToElement(driver, readytoeatLink);
+	public void foodSnacks() {
+		Utility.moveToElement(foodLink);
+		Utility.moveToElement(readytoeatLink);
 		snaksLink.click();
 	}
-	public void foodBuiscuit(WebDriver driver) {
-		Utility.moveToElement(driver, foodLink);
-		Utility.moveToElement(driver, readytoeatLink);
+	public void foodBuiscuit() {
+		Utility.moveToElement(foodLink);
+		Utility.moveToElement(readytoeatLink);
 		biscuitsLink.click();
 	}
 	public void checkDeliverylocation(String pincode) {
 		closePushNotificationBT.click();
-		Utility.moveToElement(Base.staticDriver, deliverylocLink);
+		Utility.moveToElement(deliverylocLink);
 		menupinTF.sendKeys(pincode);
 		Reporter.log("enter pincode", true);
 		checkButton.click();
@@ -420,11 +434,11 @@ public class HomePage
 		topButton.click();
 	}
 	public void clickOnLogout() {
-		Point loc = logoutLink.getLocation();
+		//Point loc = logoutLink.getLocation();
+		logoutLink.click();
 		
-		
-		Actions ac=new Actions(Base.staticDriver);
-		ac.moveByOffset(loc.getX(), loc.getY()).click().perform();
+		//Actions ac=new Actions(Base.staticDriver);
+		//ac.moveByOffset(loc.getX(), loc.getY()).click().perform();
 		
 	}
 	public void search(String search) {
@@ -445,7 +459,8 @@ public class HomePage
 	{
 		WebDriverWait wait=new WebDriverWait(Base.staticDriver, 5);
 		
-		Utility.moveToElement(Base.staticDriver, grocerylink);
+		Utility.moveToElement(grocerylink);
+		Utility.moveToElement(blendOil);
 		wait.until(ExpectedConditions.visibilityOfNestedElementsLocatedBy(grocerylink, By.xpath("//a[.='Blended oil']")));
 		wait.until(ExpectedConditions.elementToBeClickable(blendOil));
 		blendOil.click();
@@ -456,12 +471,9 @@ public class HomePage
 	
 	public void continueShopping()
 	{
-		WebDriverWait wait=new WebDriverWait(Base.staticDriver, 5);
-		Utility.moveToElement(Base.staticDriver, grocerylink);
-		wait.until(ExpectedConditions.visibilityOfNestedElementsLocatedBy(grocerylink, By.xpath("//a[.='Jaggery']")));
-		wait.until(ExpectedConditions.elementToBeClickable(jaggery));
-		jaggery.click();
-		Reporter.log("click o jaggery", true);
+		Actions act=new Actions(Base.staticDriver);
+		act.moveToElement(grocerylink).moveToElement(jaggery).click().build().perform();
+		Reporter.log("click on jaggery", true);
 		Utility.scrollBy(addtoCart.getLocation().getY());
 		addtoCart.click();
 		Reporter.log("click on add to cart button", true);
@@ -470,4 +482,11 @@ public class HomePage
 	
 	}
 	
+	public void shoppingCart() {
+		shoppingcartInfo.click();
+		Reporter.log("click on shopping cart", true);
+		Utility.scrollBy(shoppingcart.getLocation().getY());
+		shoppingcart.click();
+		Reporter.log("click on view cart", true);
+	}
 }
