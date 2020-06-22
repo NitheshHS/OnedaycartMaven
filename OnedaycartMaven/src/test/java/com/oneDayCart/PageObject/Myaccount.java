@@ -6,6 +6,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
+import org.testng.Reporter;
+
+import com.oneDayCart.GenericLib.Utility;
 
 public class Myaccount 
 {
@@ -21,6 +24,16 @@ public class Myaccount
 	@FindBy(xpath="//a[.='My Orders']")
 	private WebElement myOrder;
 	
+	@FindBy(xpath="//h1[.='My Orders']")
+	private WebElement myOrderInfo;
+	
+	@FindBy(xpath="//h1[.='My Wallet Cash']")
+	private WebElement mywalletcashInfo;
+	
+	public WebElement getMywalletcashInfo() {
+		return mywalletcashInfo;
+	}
+
 	public WebElement getAccountDash() {
 		return accountDash;
 	}
@@ -60,23 +73,25 @@ public class Myaccount
  
 
 	
+	public WebElement getMyOrderInfo() {
+		return myOrderInfo;
+	}
+
 	public void Mywallet(WebDriver driver)
 	{
-		int z=mywalletCash.getLocation().getY();
-		JavascriptExecutor js=(JavascriptExecutor)driver;
-		js.executeScript("window.scrollBy(0,"+z+");");
+		Utility.scrollBy(mywalletCash.getLocation().getY());
 		mywalletCash.click();
-		String tex = mywalletCash.getText();
-	    Assert.assertEquals("MY WALLET CASH", tex);
+		Reporter.log("click on my wallet cash", true);
+		String text = mywalletcashInfo.getText();
+	    Assert.assertTrue(text.equalsIgnoreCase("MY WALLET CASH"));
 	}
 	
-	public void Myorder(WebDriver driver)
+	public void Myorder()
 	{
-		int z = myOrder.getLocation().getY();
-		JavascriptExecutor js=(JavascriptExecutor)driver;
-		js.executeScript("window.scrollBy(0,"+z+");");
+		Utility.scrollBy(myOrder.getLocation().getY());
 		myOrder.click();
-		String text = myOrder.getText();
-		Assert.assertEquals("MY ORDERS", text);
+		Reporter.log("click on my order", true);
+		String text = myOrderInfo.getText();
+		Assert.assertTrue(text.equalsIgnoreCase("MY ORDERS"));
 	}
 }

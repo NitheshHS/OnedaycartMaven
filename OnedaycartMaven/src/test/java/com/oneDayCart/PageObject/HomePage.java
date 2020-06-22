@@ -1,5 +1,6 @@
 package com.oneDayCart.PageObject;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.Point;
@@ -9,7 +10,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 import org.openqa.selenium.support.PageFactory;
-
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.Reporter;
 
@@ -333,6 +335,18 @@ public class HomePage
 	public WebElement getScroolUp() {
 		return scroolUp;
 	}
+	@FindBy(xpath="//span[.='Chat? - Offline']")
+	private WebElement chat;
+	
+	public WebElement getChat() {
+		return chat;
+	}
+	public void clickonChat() {
+		WebDriverWait wait=new WebDriverWait(Base.staticDriver, 10);
+		wait.until(ExpectedConditions.visibilityOf(chat));
+		chat.click();
+	}
+	
 	public void clickOnSearchBar(String searchprod) {
 		searchBar.sendKeys(searchprod,Keys.ENTER);
 	}
@@ -418,37 +432,42 @@ public class HomePage
 		searchBar.sendKeys(search, Keys.ENTER);
 	}
 	
-	public void scrollTopCart(WebDriver driver,String ActTitle) 
+	public void scrollTopCart() 
 	{
-		int y=liNk.getLocation().getY();
-		JavascriptExecutor js=(JavascriptExecutor)driver;
-		js.executeScript("window.scrollBy(0,"+y+");");
+		Utility.scrollBy(liNk.getLocation().getY());
 		scroolUp.click();
-		mycartLink.click();   
-		String title = driver.getTitle();
-		Assert.assertEquals(title, ActTitle);
+		Reporter.log("click on scroll up button", true);
+		mycartLink.click();
+		Reporter.log("click on my cart link", true);
 	}
 	
 	public void moveComp()
 	{
-		Utility.ac.moveToElement(grocerylink);
+		WebDriverWait wait=new WebDriverWait(Base.staticDriver, 5);
+		
+		Utility.moveToElement(Base.staticDriver, grocerylink);
+		wait.until(ExpectedConditions.visibilityOfNestedElementsLocatedBy(grocerylink, By.xpath("//a[.='Blended oil']")));
+		wait.until(ExpectedConditions.elementToBeClickable(blendOil));
 		blendOil.click();
+		Reporter.log("click on blend oil", true);
 		String blendoil = blend.getText();
 		Assert.assertEquals("BLENDED OIL", blendoil);
 	}
 	
-	public void continueShopping(WebDriver driver)
+	public void continueShopping()
 	{
-		Utility.ac.moveToElement(grocerylink);
+		WebDriverWait wait=new WebDriverWait(Base.staticDriver, 5);
+		Utility.moveToElement(Base.staticDriver, grocerylink);
+		wait.until(ExpectedConditions.visibilityOfNestedElementsLocatedBy(grocerylink, By.xpath("//a[.='Jaggery']")));
+		wait.until(ExpectedConditions.elementToBeClickable(jaggery));
 		jaggery.click();
-		int y=addtoCart.getLocation().getY();
-		JavascriptExecutor js=(JavascriptExecutor)driver;
-		js.executeScript("window.scrollBy(0,"+y+");");
+		Reporter.log("click o jaggery", true);
+		Utility.scrollBy(addtoCart.getLocation().getY());
 		addtoCart.click();
-		scroolUp.click();
+		Reporter.log("click on add to cart button", true);
 		mycartLink.click();
-		
-		
-		
+		Reporter.log("click on my cart", true);
+	
 	}
+	
 }

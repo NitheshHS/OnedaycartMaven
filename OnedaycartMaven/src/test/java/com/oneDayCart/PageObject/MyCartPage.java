@@ -18,12 +18,15 @@ public class MyCartPage {
 	private WebElement clearShopingCartBT;
 	@FindBy(xpath="//span[.='Update Shopping Cart']")
 	private WebElement updateShopingCartBT;
-	@FindBy(xpath="//span[.='Continue Shopping']")
+	@FindBy(xpath="(//span[.='Continue Shopping'])[2]")
 	private WebElement continueShoppigBT;
 	@FindBys({
 		@FindBy(xpath="//a[@title='Remove item']")
 	})
 	private List<WebElement> removeBT;
+	
+	@FindBy(xpath="//a[@title='Remove item']")
+	private WebElement removeButton;
 	
 	@FindBy(xpath="//h1[.='Shopping Cart is Empty']")
 	private WebElement emptyCart;
@@ -46,16 +49,17 @@ public class MyCartPage {
 	public WebElement getContinueShoppigBT() {
 		return continueShoppigBT;
 	}
+	
+	
 	public List<WebElement> getRemoveBT() {
 		return removeBT;
 	}
-	
-	public void removeProdOneByOne() {
-		Reporter.log("removing items one by one from cart", true);
-		for(int i=0;i<removeBT.size();i++) {
-			removeBT.get(i).click();
-			Utility.scrollBy(removeBT.get(i).getLocation().getY());
-		}
+	public WebElement getRemoveButton() {
+		return removeButton;
+	}
+	public void removeItem() {
+		Reporter.log("removing item from cart", true);
+		removeButton.click();
 			
 		
 	}
@@ -64,18 +68,17 @@ public class MyCartPage {
 		Utility.scrollBy(y);
 		clearShopingCartBT.click();
 		Reporter.log("cleared cart items", true);
-		Assert.assertEquals(emptyCart.getText(), "Shopping Cart is Empty");
+		Assert.assertTrue(emptyCart.getText().equalsIgnoreCase("SHOPPING CART IS EMPTY"));
 	}
 	
 	public void moveToWishList() {
 		Reporter.log("move items to wishlist",true);
 		moveLink.click();
 	}
-	public void continueShopp(WebDriver driver)
+	public void continueShopp()
 	{
-		int y=continueShoppigBT.getLocation().getY();
-		JavascriptExecutor js=(JavascriptExecutor)driver;
-		js.executeScript("window.scrollBy(0,"+y+");");
+		Utility.scrollBy(continueShoppigBT.getLocation().getY());
 		continueShoppigBT.click();
+		Reporter.log("click on continue shopping", true);
 	}
 }

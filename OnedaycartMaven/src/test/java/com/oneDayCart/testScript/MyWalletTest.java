@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import com.oneDayCart.GenericLib.Base;
 import com.oneDayCart.PageObject.Myaccount;
 @Listeners(com.oneDayCart.GenericLib.ListenImp.class)
-public class myWallet extends Base
+public class MyWalletTest extends Base
 {
 	
 	@Test
@@ -16,7 +16,7 @@ public class myWallet extends Base
 	{
 		Myaccount myacc = PageFactory.initElements(driver, Myaccount.class);
 		myacc.Mywallet(driver);
-		Reporter.log("my wallet is opened",true);
+		Reporter.log("my wallet page is opened",true);
 	}
 
 }

@@ -14,6 +14,6 @@ public class RemoveCartItemsTest extends Base{
 		home=PageFactory.initElements(driver, HomePage.class);
 		home.clickOnMycart();
 		MyCartPage mycart=PageFactory.initElements(driver, MyCartPage.class);
-		mycart.removeProdOneByOne();
+		mycart.removeItem();
 	}
 }

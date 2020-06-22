@@ -9,10 +9,10 @@ import com.oneDayCart.PageObject.HomePage;
 @Listeners(com.oneDayCart.GenericLib.ListenImp.class)
 public class scrollMoveTop extends Base
 {
-    @Test
-    public void scrollTop()
-    {
-    HomePage hme = PageFactory.initElements(driver, HomePage.class);
-    hme.scrollTopCart(driver,fi.getCommonKeyValue("Title"));	
-    }
+	@Test
+	public void scrollTop()
+	{
+		home = PageFactory.initElements(driver, HomePage.class);
+		home.scrollTopCart();
+	}
 }

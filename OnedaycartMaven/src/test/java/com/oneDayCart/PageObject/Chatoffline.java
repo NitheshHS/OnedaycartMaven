@@ -2,6 +2,7 @@ package com.oneDayCart.PageObject;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.testng.Reporter;
 
 public class Chatoffline 
 {
@@ -17,6 +18,8 @@ public class Chatoffline
 	
 	@FindBy(xpath="//textarea[@id='offline2Field']")
 	private WebElement textareaTF;
+	
+	
 
 	public WebElement getTextareaTF() {
 		return textareaTF;
@@ -36,10 +39,15 @@ public class Chatoffline
 	
 	public void chatoffline(String name,String email,String message)
 	{
-		nameTF.sendKeys(name);
-		emailTF.sendKeys(email);
-		textareaTF.sendKeys(message);
 		
+		nameTF.sendKeys(name);
+		Reporter.log("enter name", true);
+		emailTF.sendKeys(email);
+		Reporter.log("enter email", true);
+		textareaTF.sendKeys(message);
+		Reporter.log("enter message", true);
+		submitButton.click();
+		Reporter.log("click on submit", true);
 	}
 
 }

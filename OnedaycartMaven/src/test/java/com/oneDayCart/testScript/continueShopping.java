@@ -13,10 +13,10 @@ public class continueShopping extends Base
 	@Test
 	public void continueShop()
 	{
-		HomePage hom = PageFactory.initElements(driver, HomePage.class);
-		hom.continueShopping(driver);
+		 home = PageFactory.initElements(driver, HomePage.class);
+		 home.continueShopping();
 		MyCartPage mycrt = PageFactory.initElements(driver, MyCartPage.class);
-		mycrt.continueShopp(driver);
+		mycrt.continueShopp();
 		
 	}
 

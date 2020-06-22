@@ -9,7 +9,7 @@ import com.oneDayCart.PageObject.HomePage;
 import com.oneDayCart.PageObject.MyWishListPage;
 
 @Listeners(com.oneDayCart.GenericLib.ListenImp.class)
-public class AddAllWishListTest extends Base{
+public class AddAllCartTest extends Base{
 	@Test
 	public void addAllToCartTest() {
 		home=PageFactory.initElements(driver, HomePage.class);

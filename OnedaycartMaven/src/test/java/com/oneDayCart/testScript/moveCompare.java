@@ -13,8 +13,8 @@ public class moveCompare extends Base
 	@Test
 	public void Comp()
 	{
-		HomePage hmo = PageFactory.initElements(driver, HomePage.class);
-		hmo.moveComp();
+		home= PageFactory.initElements(driver, HomePage.class);
+		home.moveComp();
 		Reporter.log("compared the name",true);
 	}
 

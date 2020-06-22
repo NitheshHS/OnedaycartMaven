@@ -28,7 +28,17 @@ public class MyWishListPage {
 	@FindBy(xpath="//span[.='Share Wishlist']")
 	private WebElement shareWishBT;
 	
+	@FindBy(xpath="//h1[.='My Wishlist']")
+	private WebElement mywishlistInfo;
 	
+	
+	
+	public WebElement getMessagaeTB() {
+		return messagaeTB;
+	}
+	public WebElement getMywishlistInfo() {
+		return mywishlistInfo;
+	}
 	public WebElement getEmailTB() {
 		return emailTB;
 	}
@@ -54,10 +64,12 @@ public class MyWishListPage {
 		return removeitemIcon;
 	}
 	public void removeItem() {
+		
 		Reporter.log("click on remove item", true);
 		removeitemIcon.click();
 		Base.staticDriver.switchTo().alert().accept();
 		Reporter.log("Handling alert", true);
+		
 	}
 	public void addAllToCart() {
 		Utility.scrollBy(addallToCartBT.getLocation().getY());
@@ -65,6 +77,7 @@ public class MyWishListPage {
 		Reporter.log("click on add all to cart button", true);
 	}
 	public void shareWishList(String emails, String message) {
+		Utility.scrollBy(shareWishBT.getLocation().getY());
 		shareWishlistBT.click();
 		Reporter.log("click on share wish list button", true);
 		emailTB.sendKeys(emails);

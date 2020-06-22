@@ -53,8 +53,9 @@ public class Base {
 		Reporter.log("enter email and password", true);
 	}
 	@AfterMethod
-	public void configAM() {
+	public void configAM() {	
 		home=PageFactory.initElements(driver, HomePage.class);
+		home.getClosePushNotificationBT().click();
 		home.clickOnLogout();
 		Reporter.log("click on logOut Link", true);
 	}

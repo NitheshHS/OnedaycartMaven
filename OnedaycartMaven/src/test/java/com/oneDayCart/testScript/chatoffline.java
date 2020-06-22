@@ -15,14 +15,14 @@ public class chatoffline extends Base
 	@DataProvider
 	public Object[][] readData() 
 	{
-		return fi.readAlldataFromExcel("offlinechat");
+		return fi.readAlldataFromExcel("chat");
 	
 	}
 	@Test(dataProvider="readData")
 	public void offlinechat(String name,String email,String message)
 	{
-		HomePage off = PageFactory.initElements(driver, HomePage.class);
-		off.getChatoff().click();
+		home= PageFactory.initElements(driver, HomePage.class);
+		home.clickonChat();
 		Chatoffline chat = PageFactory.initElements(driver, Chatoffline.class);
 		chat.chatoffline(name, email, message);
 		
