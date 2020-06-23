@@ -15,7 +15,11 @@ import org.testng.annotations.BeforeMethod;
 
 import com.oneDayCart.PageObject.HomePage;
 import com.oneDayCart.PageObject.LoginPage;
-
+/**
+ * This class common class for every testscript class
+ * @author user
+ *
+ */
 public class Base {
 	public WebDriver driver;
 	public static WebDriver staticDriver;

@@ -59,6 +59,19 @@ public class MyAccountPage {
 	@FindBy(xpath="//h1[.='Billing Agreements']")
 	private WebElement billinginfo;
 	
+	@FindBy(xpath="//span[.='Add New Address']")
+	private WebElement addnewAddressButton;
+	
+	
+	
+	public WebElement getAddnewAddressButton() {
+		return addnewAddressButton;
+	}
+
+	public void setAddnewAddressButton(WebElement addnewAddressButton) {
+		this.addnewAddressButton = addnewAddressButton;
+	}
+
 	public WebElement getMyAccountLink() {
 		return myAccountLink;
 	}
@@ -135,19 +148,28 @@ public class MyAccountPage {
 		Utility.scrollBy(addressBookLink.getLocation().getY());
 		addressBookLink.click();
 		Reporter.log("click on address book", true);
+		addnewAddressButton.click();
+		Reporter.log("click on add new address button");
+		
 		mobileNoTF.sendKeys(mobileNo);
 		Reporter.log("enter mobile number", true);
+		
 		landPhoneTF.sendKeys(landPhoneNo);
 		Reporter.log("enter land phone number", true);
+		
 		streetTF1.sendKeys(street1);
 		Reporter.log("enter street1 address", true);
+		
 		streetTF2.sendKeys(street2);
 		Reporter.log("enter street2 address", true);
 		Utility.scrollBy(cityTF.getLocation().getY());
+		
 		cityTF.sendKeys(city);
 		Reporter.log("enter city", true);
+		
 		postcodeTF.sendKeys(postcode);
 		Reporter.log("enter postal code", true);
+	
 		landmarkTF.sendKeys(landmark);
 		Reporter.log("enter land mark", true);
 		Utility.selectByVisibletext(stateDropdown, "Kerala");
@@ -155,8 +177,8 @@ public class MyAccountPage {
 		Utility.selectByVisibletext(countryDropdown, "India");
 		Reporter.log("select country", true);
 		Utility.scrollBy(saveaddressBT.getLocation().getY());
-		saveaddressBT.click();
-		Reporter.log("click on save address button", true);
+		//saveaddressBT.click();
+		//Reporter.log("click on save address button", true);
 	}
 	
 	public void newsLetter() {

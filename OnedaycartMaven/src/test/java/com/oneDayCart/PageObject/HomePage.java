@@ -59,8 +59,28 @@ public class HomePage
 	private WebElement personalcareLink;
 	@FindBy(linkText="STATIONERY")
 	private WebElement stationaryLink;
+
 	@FindBy(linkText="HOUSEHOLD")
 	private WebElement householdLink;
+	
+	@FindBy(xpath="//a[.='Shoe Brush']")
+	private WebElement shoebrushLink;
+	
+	@FindBy(xpath="//a[.='Shoe Polish']")
+	private WebElement shoepolishLink;
+	
+	@FindBy(xpath="//span[.='Add to Cart']")
+	private WebElement addtocartBT;
+	
+	public WebElement getShoebrushLink() {
+		return shoebrushLink;
+	}
+	public WebElement getShoepolishLink() {
+		return shoepolishLink;
+	}
+	public WebElement getAddtocartBT() {
+		return addtocartBT;
+	}
 	@FindBy(linkText="ELECTRONICS & LED")
 	private WebElement electronicsLink;
 	@FindBy(linkText="SPORTS")
@@ -355,6 +375,7 @@ public class HomePage
 	public WebElement getChat() {
 		return chat;
 	}
+	
 	public void clickonChat() {
 		WebDriverWait wait=new WebDriverWait(Base.staticDriver, 10);
 		wait.until(ExpectedConditions.visibilityOf(chat));
@@ -489,4 +510,22 @@ public class HomePage
 		shoppingcart.click();
 		Reporter.log("click on view cart", true);
 	}
+	
+	public void householdpurchase() {
+		Actions act=new Actions(Base.staticDriver);
+		act.moveToElement(householdLink).moveToElement(shoebrushLink).click().build().perform();
+		Reporter.log("mouse over to "+householdLink.getText()+" and click on shoebrush", true);
+		addtocartBT.click();
+		Reporter.log("click on add to cart button", true);
+		act.moveToElement(householdLink).moveToElement(shoepolishLink).click().build().perform();
+		Reporter.log("mouse over to "+householdLink.getText()+" and click on shoepolish", true);
+		addtocartBT.click();
+		Reporter.log("click on add to cart button", true);
+	}
+	
+	
+	
+	
+	
+	
 }

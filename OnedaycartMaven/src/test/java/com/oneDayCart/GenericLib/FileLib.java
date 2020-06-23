@@ -7,7 +7,11 @@ import java.util.Properties;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
-
+/**
+ * This class provides the data required for testscripts during execution
+ * @author user
+ *
+ */
 
 
 public class FileLib {
@@ -23,6 +27,11 @@ public class FileLib {
 		}
 		return prop.getProperty(key);
 	}
+	/**
+	 * This method read the data in excel and will provide the data when instance of class created
+	 * @param sheetName
+	 * @return
+	 */
 	public Object[][] readAlldataFromExcel(String sheetName){
 		FileInputStream file;
 		Object[][] data = null;
