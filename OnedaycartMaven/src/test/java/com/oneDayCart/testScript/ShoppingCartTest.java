@@ -8,6 +8,11 @@ import com.oneDayCart.GenericLib.Base;
 import com.oneDayCart.PageObject.HomePage;
 
 @Listeners(com.oneDayCart.GenericLib.ListenImp.class)
+/**
+ * This script written for to get information of shopping cart
+ * @author Nithesh H S
+ *
+ */
 public class ShoppingCartTest extends Base {
 	@Test
 	public void shoppingcartTest() {

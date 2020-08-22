@@ -12,7 +12,11 @@ import org.testng.Assert;
 import org.testng.Reporter;
 
 import com.oneDayCart.GenericLib.Utility;
-
+/**
+ * This class provide business logic for My cart page
+ * @author Nithesh H S
+ *
+ */
 public class MyCartPage {
 	@FindBy(xpath="//span[.='Clear Shopping Cart']")
 	private WebElement clearShopingCartBT;
@@ -57,12 +61,20 @@ public class MyCartPage {
 	public WebElement getRemoveButton() {
 		return removeButton;
 	}
+	/**
+	 * This method is used remove items in cart
+	 */
+	
 	public void removeItem() {
 		Reporter.log("removing item from cart", true);
 		removeButton.click();
 			
 		
 	}
+	
+	/**
+	 * This method used to clear all the items in my cart
+	 */
 	public void clearShoppingCart() {
 		int y=clearShopingCartBT.getLocation().getY();
 		Utility.scrollBy(y);
@@ -71,14 +83,22 @@ public class MyCartPage {
 		Assert.assertTrue(emptyCart.getText().equalsIgnoreCase("SHOPPING CART IS EMPTY"));
 	}
 	
+	/**
+	 * This method used to move the items from cart page to wish list
+	 */
 	public void moveToWishList() {
 		Reporter.log("move items to wishlist",true);
 		moveLink.click();
 	}
+	
+	/**
+	 * This method is used to continue the shopping after adding a product into cart
+	 */
 	public void continueShopp()
 	{
 		Utility.scrollBy(continueShoppigBT.getLocation().getY());
 		continueShoppigBT.click();
 		Reporter.log("click on continue shopping", true);
 	}
+
 }

@@ -10,6 +10,11 @@ import com.oneDayCart.PageObject.HomePage;
 import com.oneDayCart.PageObject.MyWishListPage;
 
 @Listeners(com.oneDayCart.GenericLib.ListenImp.class)
+/**
+ * This script written for send wish list message
+ * @author user
+ *
+ */
 public class SendWishListByMailTest extends Base{
 	@DataProvider
 	public Object[][] readData(){

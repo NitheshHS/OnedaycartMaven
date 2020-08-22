@@ -1,4 +1,4 @@
-     package com.oneDayCart.testScript;
+package com.oneDayCart.testScript;
 
 
 import org.openqa.selenium.support.PageFactory;
@@ -10,13 +10,18 @@ import com.oneDayCart.GenericLib.Base;
 import com.oneDayCart.PageObject.Chatoffline;
 import com.oneDayCart.PageObject.HomePage;
 @Listeners(com.oneDayCart.GenericLib.ListenImp.class)
+/**
+ * This script written for offline chat
+ * @author Nithesh H S
+ *
+ */
 public class chatoffline extends Base
 {
 	@DataProvider
 	public Object[][] readData() 
 	{
 		return fi.readAlldataFromExcel("chat");
-	
+
 	}
 	@Test(dataProvider="readData")
 	public void offlinechat(String name,String email,String message)
@@ -25,7 +30,7 @@ public class chatoffline extends Base
 		home.clickonChat();
 		Chatoffline chat = PageFactory.initElements(driver, Chatoffline.class);
 		chat.chatoffline(name, email, message);
-		
+
 	}
 
 }

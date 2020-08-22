@@ -8,6 +8,11 @@ import org.testng.annotations.Test;
 import com.oneDayCart.GenericLib.Base;
 import com.oneDayCart.PageObject.HomePage;
 @Listeners(com.oneDayCart.GenericLib.ListenImp.class)
+/**
+ * This scripts written for adding specific item to cart 
+ * @author Nithesh H S
+ *
+ */
 public class moveCompare extends Base
 {
 	@Test

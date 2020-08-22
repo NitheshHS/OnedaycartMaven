@@ -3,24 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.oneDayCart.testScript.MyWalletTest">
+      <class name="com.oneDayCart.testScript.ShoppingCartTest">
         <methods>
-          <include name="myWallet"/>
+          <include name="shoppingcartTest"/>
           <include name="configBC"/>
           <include name="configAC"/>
           <include name="configBM"/>
           <include name="configAM"/>
         </methods>
-      </class> <!-- com.oneDayCart.testScript.MyWalletTest -->
-      <class name="com.oneDayCart.testScript.SelectbyCategory">
-        <methods>
-          <include name="configBC"/>
-          <include name="configAC"/>
-          <include name="configBM"/>
-          <include name="Selectbycategry"/>
-          <include name="configAM"/>
-        </methods>
-      </class> <!-- com.oneDayCart.testScript.SelectbyCategory -->
+      </class> <!-- com.oneDayCart.testScript.ShoppingCartTest -->
       <class name="com.oneDayCart.testScript.chatoffline">
         <methods>
           <include name="configBC"/>
@@ -30,15 +21,51 @@
           <include name="configAM"/>
         </methods>
       </class> <!-- com.oneDayCart.testScript.chatoffline -->
-      <class name="com.oneDayCart.testScript.continueShopping">
+      <class name="com.oneDayCart.testScript.DeleteWishListTest">
+        <methods>
+          <include name="configBC"/>
+          <include name="deleteWishlistTest"/>
+          <include name="configAC"/>
+          <include name="configBM"/>
+          <include name="configAM"/>
+        </methods>
+      </class> <!-- com.oneDayCart.testScript.DeleteWishListTest -->
+      <class name="com.oneDayCart.testScript.SelectbyCategory">
+        <methods>
+          <include name="configBC"/>
+          <include name="configAC"/>
+          <include name="configBM"/>
+          <include name="Selectbycategry"/>
+          <include name="configAM"/>
+        </methods>
+      </class> <!-- com.oneDayCart.testScript.SelectbyCategory -->
+      <class name="com.oneDayCart.testScript.moveCompare">
+        <methods>
+          <include name="Comp"/>
+          <include name="configBC"/>
+          <include name="configAC"/>
+          <include name="configBM"/>
+          <include name="configAM"/>
+        </methods>
+      </class> <!-- com.oneDayCart.testScript.moveCompare -->
+      <class name="com.oneDayCart.testScript.ClearCartTest">
         <methods>
           <include name="configBC"/>
           <include name="configAC"/>
           <include name="configBM"/>
           <include name="configAM"/>
-          <include name="continueShop"/>
+          <include name="clearcartTest"/>
         </methods>
-      </class> <!-- com.oneDayCart.testScript.continueShopping -->
+      </class> <!-- com.oneDayCart.testScript.ClearCartTest -->
+      <class name="com.oneDayCart.testScript.SendWishListByMailTest">
+        <methods>
+          <include name="configBC"/>
+          <include name="configAC"/>
+          <include name="configBM"/>
+          <include name="configAM"/>
+          <include name="sendWishlistprodInMailTest" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.oneDayCart.testScript.SendWishListByMailTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

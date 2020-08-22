@@ -14,40 +14,10 @@
       <![CDATA[enter email and password]]>
     </line>
     <line>
-      <![CDATA[click on my account]]>
+      <![CDATA[entering the productRice]]>
     </line>
     <line>
-      <![CDATA[click on address book]]>
-    </line>
-    <line>
-      <![CDATA[click on add new address button]]>
-    </line>
-    <line>
-      <![CDATA[enter mobile number]]>
-    </line>
-    <line>
-      <![CDATA[enter land phone number]]>
-    </line>
-    <line>
-      <![CDATA[enter street1 address]]>
-    </line>
-    <line>
-      <![CDATA[enter street2 address]]>
-    </line>
-    <line>
-      <![CDATA[enter city]]>
-    </line>
-    <line>
-      <![CDATA[enter postal code]]>
-    </line>
-    <line>
-      <![CDATA[enter land mark]]>
-    </line>
-    <line>
-      <![CDATA[select state]]>
-    </line>
-    <line>
-      <![CDATA[select country]]>
+      <![CDATA[move items to wishlist]]>
     </line>
     <line>
       <![CDATA[click on logOut Link]]>
@@ -56,12 +26,12 @@
       <![CDATA[browser closed]]>
     </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="85271" started-at="2020-06-23T09:00:38 IST" finished-at="2020-06-23T09:02:03 IST">
+  <suite name="Default suite" duration-ms="139147" started-at="2020-06-27T12:34:02 IST" finished-at="2020-06-27T12:36:21 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="85271" started-at="2020-06-23T09:00:38 IST" finished-at="2020-06-23T09:02:03 IST">
-      <class name="com.oneDayCart.testScript.AddressBookTest">
-        <test-method status="PASS" signature="configBC()[pri:0, instance:com.oneDayCart.testScript.AddressBookTest@1f7030a6]" name="configBC" is-config="true" duration-ms="34783" started-at="2020-06-23T09:00:38 IST" finished-at="2020-06-23T09:01:12 IST">
+    <test name="Default test" duration-ms="139147" started-at="2020-06-27T12:34:02 IST" finished-at="2020-06-27T12:36:21 IST">
+      <class name="com.oneDayCart.testScript.WishListTest">
+        <test-method status="PASS" signature="configBC()[pri:0, instance:com.oneDayCart.testScript.WishListTest@2d6eabae]" name="configBC" is-config="true" duration-ms="72740" started-at="2020-06-27T12:34:02 IST" finished-at="2020-06-27T12:35:15 IST">
           <reporter-output>
             <line>
               <![CDATA[Browser is launched]]>
@@ -71,7 +41,7 @@
             </line>
           </reporter-output>
         </test-method> <!-- configBC -->
-        <test-method status="PASS" signature="configBM()[pri:0, instance:com.oneDayCart.testScript.AddressBookTest@1f7030a6]" name="configBM" is-config="true" duration-ms="18373" started-at="2020-06-23T09:01:15 IST" finished-at="2020-06-23T09:01:34 IST">
+        <test-method status="PASS" signature="configBM()[pri:0, instance:com.oneDayCart.testScript.WishListTest@2d6eabae]" name="configBM" is-config="true" duration-ms="32024" started-at="2020-06-27T12:35:15 IST" finished-at="2020-06-27T12:35:47 IST">
           <reporter-output>
             <line>
               <![CDATA[click on logIn link]]>
@@ -81,98 +51,31 @@
             </line>
           </reporter-output>
         </test-method> <!-- configBM -->
-        <test-method status="PASS" signature="addressBookTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.oneDayCart.testScript.AddressBookTest@1f7030a6]" name="addressBookTest" duration-ms="19301" started-at="2020-06-23T09:01:34 IST" data-provider="readdata" finished-at="2020-06-23T09:01:53 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[997287893]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[8310342658]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[KEB]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[lane]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Munnar]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[682001]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[church]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="PASS" signature="moveItemToWishlistTest()[pri:0, instance:com.oneDayCart.testScript.WishListTest@2d6eabae]" name="moveItemToWishlistTest" duration-ms="26992" started-at="2020-06-27T12:35:47 IST" finished-at="2020-06-27T12:36:14 IST">
           <reporter-output>
             <line>
-              <![CDATA[click on my account]]>
+              <![CDATA[entering the productRice]]>
             </line>
             <line>
-              <![CDATA[click on address book]]>
-            </line>
-            <line>
-              <![CDATA[click on add new address button]]>
-            </line>
-            <line>
-              <![CDATA[enter mobile number]]>
-            </line>
-            <line>
-              <![CDATA[enter land phone number]]>
-            </line>
-            <line>
-              <![CDATA[enter street1 address]]>
-            </line>
-            <line>
-              <![CDATA[enter street2 address]]>
-            </line>
-            <line>
-              <![CDATA[enter city]]>
-            </line>
-            <line>
-              <![CDATA[enter postal code]]>
-            </line>
-            <line>
-              <![CDATA[enter land mark]]>
-            </line>
-            <line>
-              <![CDATA[select state]]>
-            </line>
-            <line>
-              <![CDATA[select country]]>
+              <![CDATA[move items to wishlist]]>
             </line>
           </reporter-output>
-        </test-method> <!-- addressBookTest -->
-        <test-method status="PASS" signature="configAM()[pri:0, instance:com.oneDayCart.testScript.AddressBookTest@1f7030a6]" name="configAM" is-config="true" duration-ms="4714" started-at="2020-06-23T09:01:53 IST" finished-at="2020-06-23T09:01:58 IST">
+        </test-method> <!-- moveItemToWishlistTest -->
+        <test-method status="PASS" signature="configAM()[pri:0, instance:com.oneDayCart.testScript.WishListTest@2d6eabae]" name="configAM" is-config="true" duration-ms="6933" started-at="2020-06-27T12:36:14 IST" finished-at="2020-06-27T12:36:21 IST">
           <reporter-output>
             <line>
               <![CDATA[click on logOut Link]]>
             </line>
           </reporter-output>
         </test-method> <!-- configAM -->
-        <test-method status="PASS" signature="configAC()[pri:0, instance:com.oneDayCart.testScript.AddressBookTest@1f7030a6]" name="configAC" is-config="true" duration-ms="5240" started-at="2020-06-23T09:01:58 IST" finished-at="2020-06-23T09:02:03 IST">
+        <test-method status="PASS" signature="configAC()[pri:0, instance:com.oneDayCart.testScript.WishListTest@2d6eabae]" name="configAC" is-config="true" duration-ms="320" started-at="2020-06-27T12:36:21 IST" finished-at="2020-06-27T12:36:21 IST">
           <reporter-output>
             <line>
               <![CDATA[browser closed]]>
             </line>
           </reporter-output>
         </test-method> <!-- configAC -->
-      </class> <!-- com.oneDayCart.testScript.AddressBookTest -->
+      </class> <!-- com.oneDayCart.testScript.WishListTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

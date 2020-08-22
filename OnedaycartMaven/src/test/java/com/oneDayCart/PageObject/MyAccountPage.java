@@ -6,7 +6,11 @@ import org.testng.Assert;
 import org.testng.Reporter;
 
 import com.oneDayCart.GenericLib.Utility;
-
+/**
+ * This class provide Business logic for My account menu
+ * @author Nithesh H S
+ *
+ */
 public class MyAccountPage {
 	@FindBy(xpath="//a[.='My Account']")
 	private WebElement myAccountLink;
@@ -181,6 +185,9 @@ public class MyAccountPage {
 		//Reporter.log("click on save address button", true);
 	}
 	
+	/**
+	 * This method is used to get subscription for news letter or updates in application
+	 */
 	public void newsLetter() {
 		myAccountLink.click();
 		Reporter.log("click on my account", true);
@@ -192,7 +199,9 @@ public class MyAccountPage {
 		saveBT.click();
 		Reporter.log("click on save button", true);
 	}
-	
+	/**
+	 * This method is used to get information of billing agreement
+	 */
 	public void billingAgreement() {
 		myAccountLink.click();
 		Reporter.log("click on my account", true);

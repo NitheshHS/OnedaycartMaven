@@ -8,6 +8,11 @@ import com.oneDayCart.GenericLib.Base;
 import com.oneDayCart.PageObject.HomePage;
 import com.oneDayCart.PageObject.MyCartPage;
 @Listeners(com.oneDayCart.GenericLib.ListenImp.class)
+/**
+ * This script written for clear the cart items
+ * @author Nithesh H S
+ *
+ */
 public class ClearCartTest extends Base{
 	@Test
 	public void clearcartTest() {

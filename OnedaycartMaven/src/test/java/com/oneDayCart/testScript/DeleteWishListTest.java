@@ -10,10 +10,16 @@ import com.oneDayCart.PageObject.MyCartPage;
 import com.oneDayCart.PageObject.MyWishListPage;
 
 @Listeners(com.oneDayCart.GenericLib.ListenImp.class)
+/**
+ * This script written for delete a item from wish list
+ * @author Nithesh H S
+ *
+ */
 public class DeleteWishListTest extends Base{
 	@Test
 	public void deleteWishlistTest() {
 		home=PageFactory.initElements(driver, HomePage.class);
+		home.search("Rice");
 		home.clickOnMycart();
 		MyCartPage mycart = PageFactory.initElements(driver, MyCartPage.class);
 		mycart.moveToWishList();

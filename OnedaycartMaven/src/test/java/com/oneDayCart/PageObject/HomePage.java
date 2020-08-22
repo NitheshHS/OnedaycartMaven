@@ -18,7 +18,11 @@ import org.testng.asserts.SoftAssert;
 
 import com.oneDayCart.GenericLib.Base;
 import com.oneDayCart.GenericLib.Utility;
-
+/**
+ * This class contains elements in home page, getters method and business logic
+ * @author Nithesh H S
+ *
+ */
 public class HomePage 
 {	
 	@FindBy(linkText="Register")
@@ -441,6 +445,10 @@ public class HomePage
 		Utility.moveToElement(readytoeatLink);
 		biscuitsLink.click();
 	}
+	/**
+	 * This method provide business logic to check delivery location
+	 * @param pincode
+	 */
 	public void checkDeliverylocation(String pincode) {
 		closePushNotificationBT.click();
 		Utility.moveToElement(deliverylocLink);
@@ -454,6 +462,9 @@ public class HomePage
 	public void clickOnTop() {
 		topButton.click();
 	}
+	/**
+	 * This method provide business logic to logout from application
+	 */
 	public void clickOnLogout() {
 		//Point loc = logoutLink.getLocation();
 		logoutLink.click();
@@ -462,11 +473,20 @@ public class HomePage
 		//ac.moveByOffset(loc.getX(), loc.getY()).click().perform();
 		
 	}
+	/**
+	 * This method provide business logic to search the product and add the product to cart based on search history
+	 * @param search
+	 */
 	public void search(String search) {
 		Reporter.log("entering the product"+search, true);
 		searchBar.sendKeys(search, Keys.ENTER);
+		WebDriverWait wait=new WebDriverWait(Base.staticDriver, 10);
+		wait.until(ExpectedConditions.visibilityOf(addtocartBT));
+		addtocartBT.click();
 	}
-	
+	/**
+	 * This method perform scrolling actions
+	 */
 	public void scrollTopCart() 
 	{
 		Utility.scrollBy(liNk.getLocation().getY());
@@ -502,7 +522,9 @@ public class HomePage
 		Reporter.log("click on my cart", true);
 	
 	}
-	
+	/**
+	 * This method used to get information of shopping cart
+	 */
 	public void shoppingCart() {
 		shoppingcartInfo.click();
 		Reporter.log("click on shopping cart", true);
@@ -510,7 +532,9 @@ public class HomePage
 		shoppingcart.click();
 		Reporter.log("click on view cart", true);
 	}
-	
+	/**
+	 * This method provide Business logic for adding items to cart from household submenu
+	 */
 	public void householdpurchase() {
 		Actions act=new Actions(Base.staticDriver);
 		act.moveToElement(householdLink).moveToElement(shoebrushLink).click().build().perform();

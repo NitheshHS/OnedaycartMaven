@@ -8,6 +8,11 @@ import com.oneDayCart.GenericLib.Base;
 import com.oneDayCart.PageObject.HomePage;
 import com.oneDayCart.PageObject.MyCartPage;
 @Listeners(com.oneDayCart.GenericLib.ListenImp.class)
+/**
+ * This script written for adding product to cart and continue the shopping
+ * @author user
+ *
+ */
 public class continueShopping extends Base
 {
 	@Test

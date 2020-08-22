@@ -6,7 +6,11 @@ import org.testng.Reporter;
 
 import com.oneDayCart.GenericLib.Base;
 import com.oneDayCart.GenericLib.Utility;
-
+/**
+ * 
+ * @author Nithesh H S
+ *
+ */
 public class MyWishListPage {
 	@FindBy(xpath="//span[.='Add to Cart']")
 	private WebElement addtocartButton;
@@ -63,6 +67,10 @@ public class MyWishListPage {
 	public WebElement getRemoveitemIcon() {
 		return removeitemIcon;
 	}
+	
+	/**
+	 * This method is used to remove item in my wish list page
+	 */
 	public void removeItem() {
 		
 		Reporter.log("click on remove item", true);
@@ -71,11 +79,20 @@ public class MyWishListPage {
 		Reporter.log("Handling alert", true);
 		
 	}
+	/**
+	 * This method is used to add all product in my wish list page to my cart page
+	 */
 	public void addAllToCart() {
 		Utility.scrollBy(addallToCartBT.getLocation().getY());
 		addallToCartBT.click();
 		Reporter.log("click on add all to cart button", true);
 	}
+	
+	/**
+	 * This method is used to send wish list items to one or more email with messages
+	 * @param emails
+	 * @param message
+	 */
 	public void shareWishList(String emails, String message) {
 		Utility.scrollBy(shareWishBT.getLocation().getY());
 		shareWishlistBT.click();

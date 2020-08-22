@@ -8,6 +8,11 @@ import org.testng.annotations.Test;
 import com.oneDayCart.GenericLib.Base;
 import com.oneDayCart.PageObject.Myaccount;
 @Listeners(com.oneDayCart.GenericLib.ListenImp.class)
+/**
+ * This script written for check wallet cash
+ * @author Nithesh H S
+ *
+ */
 public class MyWalletTest extends Base
 {
 	

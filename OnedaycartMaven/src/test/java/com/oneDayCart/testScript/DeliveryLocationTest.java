@@ -7,6 +7,11 @@ import org.testng.annotations.Test;
 import com.oneDayCart.GenericLib.Base;
 import com.oneDayCart.PageObject.HomePage;
 @Listeners(com.oneDayCart.GenericLib.ListenImp.class)
+/**
+ * This script written for to check delivery location
+ * @author Nithesh H S
+ *
+ */
 public class DeliveryLocationTest extends Base{
 	@Test
 	public void deliverylocTest() {

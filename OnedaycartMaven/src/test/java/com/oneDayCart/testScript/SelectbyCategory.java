@@ -7,6 +7,11 @@ import org.testng.annotations.Test;
 import com.oneDayCart.GenericLib.Base;
 import com.oneDayCart.PageObject.Groceriesandstaples;
 @Listeners(com.oneDayCart.GenericLib.ListenImp.class)
+/**
+ * This script written for sort the items
+ * @author user
+ *
+ */
 public class SelectbyCategory extends Base
 {
 	

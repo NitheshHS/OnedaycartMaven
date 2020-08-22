@@ -9,7 +9,11 @@ import org.testng.Assert;
 import org.testng.Reporter;
 
 import com.oneDayCart.GenericLib.Utility;
-
+/**
+ * This class provide Business logic for My account menu
+ * @author Nithesh H S
+ *
+ */
 public class Myaccount 
 {
 	@FindBy(xpath="//a[.='Account Dashboard']")
@@ -76,7 +80,13 @@ public class Myaccount
 	public WebElement getMyOrderInfo() {
 		return myOrderInfo;
 	}
-
+	
+	/**
+	 * This method used to get information of My Wallet sub menu in My account menu
+	 * @param driver
+	 */
+	
+	
 	public void Mywallet(WebDriver driver)
 	{
 		Utility.scrollBy(mywalletCash.getLocation().getY());
@@ -86,6 +96,9 @@ public class Myaccount
 	    Assert.assertTrue(text.equalsIgnoreCase("MY WALLET CASH"));
 	}
 	
+	/**
+	 * This method used to get information about orders in My account menu
+	 */
 	public void Myorder()
 	{
 		Utility.scrollBy(myOrder.getLocation().getY());

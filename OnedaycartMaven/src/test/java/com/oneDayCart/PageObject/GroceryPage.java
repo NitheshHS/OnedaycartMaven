@@ -13,8 +13,11 @@ import org.testng.Reporter;
 
 import com.oneDayCart.GenericLib.Base;
 import com.oneDayCart.GenericLib.Utility;
-
-public class Grocery {
+/**
+ * This class contains pageObjects of Grocery 
+ * 
+ */
+public class GroceryPage {
 
 	@FindBy(xpath="//span[.='Add to Cart']")
 	private WebElement addcartButtons;
@@ -57,8 +60,15 @@ public class Grocery {
 	public WebElement getAddcartButtons() {
 		return addcartButtons;
 	}
-	public void addGrocery(WebDriver driver,String search, String kGgrams) {
-		HomePage home = PageFactory.initElements(driver, HomePage.class);
+	
+	/**
+	 * This method used to add grocery products by selecting specific quantity
+	 * @param search
+	 * @param kGgrams
+	 */
+	
+	public void addGrocery(String search, String kGgrams) {
+		HomePage home = PageFactory.initElements(Base.staticDriver, HomePage.class);
 		home.search(search);
 		Reporter.log("search product", true);
 		Utility.selectByVisibletext(selectQTYdrop, kGgrams);
@@ -66,6 +76,10 @@ public class Grocery {
 		Reporter.log("click on add to cart button", true);
 
 	}
+	
+	/**
+	 * This method is used to add product to cart
+	 */
 	public void addAllprodToCart() {
 		addcartButtons.click();
 		Reporter.log("click on add cart button", true);

@@ -8,6 +8,11 @@ import com.oneDayCart.GenericLib.Base;
 import com.oneDayCart.PageObject.MyAccountPage;
 
 @Listeners(com.oneDayCart.GenericLib.ListenImp.class)
+/**
+ * This script written for adding billing agreement
+ * @author Nithesh H S
+ *
+ */
 public class BillingAgreementTest extends Base {
 	@Test
 	public void billingAgreementTest()

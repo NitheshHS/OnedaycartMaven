@@ -9,6 +9,11 @@ import com.oneDayCart.GenericLib.Base;
 import com.oneDayCart.PageObject.HomePage;
 import com.oneDayCart.PageObject.Myaccount;
 @Listeners(com.oneDayCart.GenericLib.ListenImp.class)
+/**
+ * This script is written for ordered items
+ * @author user
+ *
+ */
 public class myOrder extends Base
 {
 	@Test

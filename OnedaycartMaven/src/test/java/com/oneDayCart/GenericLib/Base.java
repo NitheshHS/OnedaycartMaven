@@ -16,7 +16,7 @@ import org.testng.annotations.BeforeMethod;
 import com.oneDayCart.PageObject.HomePage;
 import com.oneDayCart.PageObject.LoginPage;
 /**
- * This class common class for every testscript class
+ * This class common class for every testscript methods
  * @author user
  *
  */
